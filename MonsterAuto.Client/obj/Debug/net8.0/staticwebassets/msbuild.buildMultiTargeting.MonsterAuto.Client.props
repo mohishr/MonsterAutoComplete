@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MonsterAuto.Client.props" />
+</Project>

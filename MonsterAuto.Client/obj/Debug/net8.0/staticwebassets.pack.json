@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\shrey\\source\\repos\\MonsterAuto\\MonsterAuto.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Users\\shrey\\source\\repos\\MonsterAuto\\MonsterAuto.Client\\obj\\Debug\\net8.0\\compressed\\khhgnt4yhc.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\Users\\shrey\\source\\repos\\MonsterAuto\\MonsterAuto.Client\\wwwroot\\appsettings.Development.json",
+      "PackagePath": "staticwebassets\\appsettings.Development.json"
+    },
+    {
+      "Id": "C:\\Users\\shrey\\source\\repos\\MonsterAuto\\MonsterAuto.Client\\wwwroot\\appsettings.json",
+      "PackagePath": "staticwebassets\\appsettings.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MonsterAuto.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.MonsterAuto.Client.props",
+      "PackagePath": "build\\MonsterAuto.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MonsterAuto.Client.props",
+      "PackagePath": "buildMultiTargeting\\MonsterAuto.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.MonsterAuto.Client.props",
+      "PackagePath": "buildTransitive\\MonsterAuto.Client.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

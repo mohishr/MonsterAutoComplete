@@ -1,0 +1,28 @@
+﻿<MudAutocomplete T="string"
+                 Strict="false"
+                 SearchFunc="Search"
+                 Value="@dropdown?.SelectedValue"
+                 ValueChanged="@((string value)=>{
+                    if(dropdown!=null)
+                    dropdown.SelectedValue = value;
+                    if(RerenderParent!=null)
+                    RerenderParent.Invoke(this.dropdown);
+                 })"
+                 Label="@dropdown?.Key"
+                 AutoFocus="false"/>
+
+
+@code {
+    [Parameter]
+    public DropdownModel dropdown { get; set; } = default!;
+    [Parameter]
+    public Func<DropdownModel?, Task> RerenderParent { get; set; } = default!;
+
+    private async Task<IEnumerable<string>> Search(string value, CancellationToken cancellationToken)
+    {
+        await Task.Delay(1);
+        if (dropdown == null)
+            return new List<string>();
+        return dropdown.Values.Where(x => x.Contains(value, StringComparison.OrdinalIgnoreCase));
+    }
+}

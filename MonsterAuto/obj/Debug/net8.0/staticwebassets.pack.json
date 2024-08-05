@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\shrey\\source\\repos\\MonsterAuto\\MonsterAuto\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MonsterAuto.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.MonsterAuto.props",
+      "PackagePath": "build\\MonsterAuto.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MonsterAuto.props",
+      "PackagePath": "buildMultiTargeting\\MonsterAuto.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.MonsterAuto.props",
+      "PackagePath": "buildTransitive\\MonsterAuto.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

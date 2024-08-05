@@ -1,0 +1,45 @@
+﻿<MudStack Row="true"
+          Wrap="Wrap.Wrap"
+          AlignItems="AlignItems.Start"
+          Class="border-dashed border-2 mud-border-primary pa-4">
+    @if (nextDropdowns != null)
+    {
+        @foreach (var dropdown in nextDropdowns)
+        {
+            <HelperAutoComplete dropdown="@dropdown" RerenderParent="UpdateNextDropdowns" />
+        }
+    }
+
+</MudStack>
+@code {
+    [Parameter]
+    public DropdownModel MainDropdown { get; set; } = default!;
+
+    private IEnumerable<DropdownModel>? nextDropdowns;
+    private int totalDropdown = 0;
+    private Dictionary<string, string>? values = null;
+    protected override void OnParametersSet()
+    {
+        if (MainDropdown == null) return;
+        nextDropdowns = MainDropdown.GetAllDropdowns();
+    }
+        protected override void OnAfterRender(bool firstRender)
+        {
+            base.OnAfterRender(firstRender);
+        }
+        private async Task UpdateNextDropdowns(DropdownModel? dropdownModel)
+    {
+        await Task.Delay(1);
+        if (dropdownModel == null) return;
+        List<DropdownModel> updatedList = new();
+        foreach (var dropdwon in nextDropdowns.ToList())
+        {
+            updatedList.Add(dropdwon);
+            if (dropdwon.Key == dropdownModel.Key) break;
+        }
+        updatedList.AddRange(dropdownModel.GetAllDropdowns());
+        nextDropdowns = updatedList;
+        StateHasChanged();
+    }
+
+}

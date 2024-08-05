@@ -1,0 +1,83 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<MudText Typo="Typo.h3" GutterBottom="true">Hello, world!</MudText>
+<MudText Class="mb-8">Welcome to your new app, powered by MudBlazor and the .NET 8 Template!</MudText>
+
+<MudAlert Severity="Severity.Normal">
+    You can find documentation and examples on our website here:
+    <MudLink Href="https://mudblazor.com" Target="_blank" Typo="Typo.body2" Color="Color.Primary">
+        <b>www.mudblazor.com</b>
+    </MudLink>
+</MudAlert>
+
+<MonsterAuto.Client.Components.MonsterAutoComplete MainDropdown="@mainDropdown" />
+@code{
+
+
+    DropdownModel mainDropdown = new DropdownModel("Continent", new List<string>() { "northAmerica", "europe"});
+    
+    protected override void OnInitialized()
+    {
+        var usCitiesNY = new DropdownModel("New York", new List<string> { "New York", "Buffalo", "Rochester" });
+        var usCitiesCA = new DropdownModel("California", new List<string> { "Los Angeles", "San Francisco", "San Diego" });
+        var usCitiesIL = new DropdownModel("Illinois", new List<string> { "Chicago", "Springfield", "Naperville" });
+
+        var canadaCitiesON = new DropdownModel("Ontario", new List<string> { "Ottawa", "Toronto", "Mississauga" });
+        var canadaCitiesBC = new DropdownModel("British Columbia", new List<string> { "Vancouver", "Victoria", "Burnaby" });
+        var canadaCitiesQC = new DropdownModel("Quebec", new List<string> { "Montreal", "Quebec City", "Laval" });
+
+        var ukCitiesENG = new DropdownModel("England", new List<string> { "London", "Manchester", "Birmingham" });
+        var ukCitiesSCT = new DropdownModel("Scotland", new List<string> { "Edinburgh", "Glasgow", "Aberdeen" });
+        var ukCitiesWLS = new DropdownModel("Wales", new List<string> { "Cardiff", "Swansea", "Newport" });
+
+        //var germanyCities = new DropdownModel("germanyCities", new List<string> { "Berlin", "Munich", "Frankfurt" });
+
+        //var franceCities = new DropdownModel("franceCities", new List<string> { "Paris", "Marseille", "Lyon" });
+
+        //var indiaCitiesMH = new DropdownModel("indiaCitiesMH", new List<string> { "Mumbai", "Pune", "Nagpur" });
+        //var indiaCitiesKA = new DropdownModel("indiaCitiesKA", new List<string> { "Bangalore", "Mysore", "Mangalore" });
+        //var indiaCitiesTN = new DropdownModel("indiaCitiesTN", new List<string> { "Chennai", "Coimbatore", "Madurai" });
+
+        //var chinaCities = new DropdownModel("chinaCities", new List<string> { "Beijing", "Shanghai", "Shenzhen" });
+
+        //var japanCities = new DropdownModel("japanCities", new List<string> { "Tokyo", "Osaka", "Kyoto" });
+
+        var usStates = new DropdownModel("USA", new List<string> { "New York", "California", "Illinois" });
+
+        var canadaStates = new DropdownModel("Canada", new List<string> { "Ontario", "British Columbia", "Quebec" });
+
+        var ukStates = new DropdownModel("United Kingdom", new List<string> { "England", "Scotland", "Wales" });
+
+        //var germanyStates = new DropdownModel("germanyStates", new List<string> { "Bavaria", "Berlin", "Hesse" });
+        //var franceStates = new DropdownModel("franceStates", new List<string> { "Île-de-France", "Provence-Alpes-Côte d'Azur", "Auvergne-Rhône-Alpes" });
+        //var indiaStates = new DropdownModel("indiaStates", new List<string> { "Maharashtra", "Karnataka", "Tamil Nadu" });
+        //var chinaStates = new DropdownModel("chinaStates", new List<string> { "Beijing", "Shanghai", "Guangdong" });
+        //var japanStates = new DropdownModel("japanStates", new List<string> { "Tokyo", "Osaka", "Kyoto" });
+
+        var northAmerica = new DropdownModel("northAmerica", new List<string> { "USA", "Canada" });
+        var europe = new DropdownModel("europe", new List<string> { "United Kingdom"});
+        //var asia = new DropdownModel("asia", new List<string> { "India", "China", "Japan" });
+        var torontoVillages = new DropdownModel("Toronto", new List<string> { "Toronto Village1", "Toronto Village 2" });
+        canadaCitiesON.Children.AddRange(new List<DropdownModel> { torontoVillages });
+        canadaStates.Children.AddRange(new List<DropdownModel> {  canadaCitiesBC, canadaCitiesON, canadaCitiesQC});
+        usStates.Children.AddRange(new List<DropdownModel> { usCitiesNY, usCitiesCA, usCitiesIL });
+        ukStates.Children.AddRange(new List<DropdownModel> { ukCitiesENG, ukCitiesSCT, ukCitiesWLS });
+
+        //germanyStates.Children.Add(germanyCities);
+        //franceStates.Children.Add(franceCities);
+        //indiaStates.Children.AddRange(new List<DropdownModel> { indiaCitiesMH, indiaCitiesKA, indiaCitiesTN });
+
+        //chinaStates.Children.Add(chinaCities);
+        //japanStates.Children.Add(japanCities);
+        northAmerica.Children.AddRange(new List<DropdownModel> { usStates, canadaStates });
+
+        europe.Children.AddRange(new List<DropdownModel> { ukStates});
+
+        //asia.Children.AddRange(new List<DropdownModel> { indiaStates, chinaStates, japanStates });
+
+        mainDropdown.Children.AddRange(new List<DropdownModel>() { northAmerica, europe});
+    }
+
+}
